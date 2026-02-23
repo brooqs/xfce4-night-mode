@@ -1,0 +1,14 @@
+[Unit]
+Description=XFCE4 Night Mode — Automatic theme switching based on sunrise/sunset
+Documentation=https://github.com/brooqs/xfce4-night-mode
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/xfce4-night-mode --daemon
+Restart=on-failure
+RestartSec=10
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target
