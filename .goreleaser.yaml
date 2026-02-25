@@ -34,28 +34,19 @@ nfpms:
 checksum:
   name_template: 'checksums.txt'
 
-aurs:
-  - name: xfce4-night-mode
-    homepage: https://github.com/brooqs/xfce4-night-mode
-    description: "XFCE4 Night Mode — Automatic theme switching based on sunrise/sunset"
-    maintainers:
-      - "brooqs <your@email.com>"
-    license: "MIT"
-    private_key: '{{ .Env.AUR_KEY }}'
-    git_url: 'ssh://aur@aur.archlinux.org/xfce4-night-mode.git'
-    package: |-
-      # This is a custom install block for AUR PKGBUILD
-      install -Dm755 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-      install -Dm644 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/xfce4-night-mode.service" "${pkgdir}/usr/lib/systemd/user/${pkgname}.service"
-
-brews:
-  - name: xfce4-night-mode
-    repository:
-      owner: brooqs
-      name: homebrew-tap
-    homepage: https://github.com/brooqs/xfce4-night-mode
-    description: "XFCE4 Night Mode — Automatic theme switching based on sunrise/sunset"
-    license: "MIT"
+# aurs:
+#   - name: xfce4-night-mode
+#     homepage: https://github.com/brooqs/xfce4-night-mode
+#     description: "XFCE4 Night Mode — Automatic theme switching based on sunrise/sunset"
+#     maintainers:
+#       - "brooqs <your@email.com>"
+#     license: "MIT"
+#     private_key: '{{ .Env.AUR_KEY }}'
+#     git_url: 'ssh://aur@aur.archlinux.org/xfce4-night-mode.git'
+#     package: |-
+#       # This is a custom install block for AUR PKGBUILD
+#       install -Dm755 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+#       install -Dm644 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/xfce4-night-mode.service" "${pkgdir}/usr/lib/systemd/user/${pkgname}.service"
 
 changelog:
   sort: asc
