@@ -12,7 +12,7 @@ install: build
 	@mkdir -p $(INSTALL_DIR)
 	cp $(BINARY_NAME) $(INSTALL_DIR)/
 	@mkdir -p $(SERVICE_DIR)
-	cp $(BINARY_NAME).service $(SERVICE_DIR)/
+	sed 's|/usr/bin|$(INSTALL_DIR)|g' $(BINARY_NAME).service > $(SERVICE_DIR)/$(BINARY_NAME).service
 	@echo "Installed to $(INSTALL_DIR)/$(BINARY_NAME)"
 	@echo "Run 'make enable' to start the service"
 
