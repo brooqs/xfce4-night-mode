@@ -42,9 +42,8 @@ aurs:
       - "brooqs <your@email.com>"
     license: "MIT"
     private_key: '{{ .Env.AUR_KEY }}'
-    git_url: 'ssh://aur@aur.archlinux.org/xfce4-night-mode.git'
-    package: xfce4-night-mode
-    custom_install: |-
+    git_url: 'ssh://aur@aur.archlinux.org/xfce4-night-mode-bin.git'
+    package: |-
       # This is a custom install block for AUR PKGBUILD
       install -Dm755 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/xfce4-night-mode" "${pkgdir}/usr/bin/xfce4-night-mode"
       install -Dm644 "${srcdir}/${pkgname}_${pkgver}_linux_${CARCH}/xfce4-night-mode.service" "${pkgdir}/usr/lib/systemd/user/xfce4-night-mode.service"
